@@ -13,7 +13,7 @@
     "typescript"
   ],
   "license": "MIT",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "private": false,
   "main": "dist/index.cjs",
   "types": "dist/index.d.cts",
