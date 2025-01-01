@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.11",
+    "@simplr-sh/swapi-sdk": "^0.1.0",
     "@types/bun": "latest",
     "tsup": "^8.3.5"
   },
