@@ -13,7 +13,7 @@
     "typescript"
   ],
   "license": "MIT",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "private": false,
   "main": "dist/index.cjs",
   "types": "dist/index.d.cts",
@@ -23,13 +23,12 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup ./src/index.ts --format cjs,esm --minify --dts",
+    "build": "tsup ./src/index.ts --format cjs,esm --dts --minify",
     "dev": "tsup -d",
     "lint": "tsc"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.11",
-    "@simplr-sh/swapi-sdk": "^0.0.7",
     "@types/bun": "latest",
     "tsup": "^8.3.5"
   },

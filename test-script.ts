@@ -6,7 +6,7 @@ import {
   species,
   starships,
   vehicles,
-} from '@simplr-sh/swapi-sdk'
+} from './dist/index'
 ;(async () => {
   const [film, person, planet, _root, _species, starship, vehicle] =
     await Promise.all([

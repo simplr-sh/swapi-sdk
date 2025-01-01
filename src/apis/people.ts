@@ -10,7 +10,7 @@ export async function getPeople() {
   if (!response.ok) {
     throw new Error('Failed to fetch people')
   }
-  return response.json() as Promise<Array<People>>
+  return response.json() as Promise<Array<Person>>
 }
 
 /**
@@ -24,7 +24,7 @@ export async function getPersonById(id: number) {
   if (!response.ok) {
     throw new Error('Failed to fetch person, ensure the ID is correct & exists')
   }
-  return response.json() as Promise<People>
+  return response.json() as Promise<Person>
 }
 
 /**
@@ -52,7 +52,7 @@ export async function searchPeople(query: string) {
   )
 }
 
-export type People = {
+export type Person = {
   name: string
   height: string
   mass: string
