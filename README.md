@@ -1,6 +1,6 @@
 # @simplr-sh/swapi-sdk
 
-A TypeScript SDK for interacting with the Star Wars API (SWAPI) [Simplr's SW-API](https://github.com/simplr-sh/sw-api).
+A TypeScript SDK for interacting with the Star Wars API (SWAPI) @ [Simplr's SW-API](https://github.com/simplr-sh/sw-api).
 
 ## Installation
 
