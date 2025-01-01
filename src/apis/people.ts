@@ -7,6 +7,9 @@ import { API_BASE_URL } from '../constants'
  */
 export async function getPeople() {
   const response = await fetch(`${API_BASE_URL}/people/all.json`)
+  if (!response.ok) {
+    throw new Error('Failed to fetch people')
+  }
   return response.json() as Promise<Array<People>>
 }
 
@@ -18,6 +21,9 @@ export async function getPeople() {
  */
 export async function getPersonById(id: number) {
   const response = await fetch(`${API_BASE_URL}/people/${id}.json`)
+  if (!response.ok) {
+    throw new Error('Failed to fetch person, ensure the ID is correct & exists')
+  }
   return response.json() as Promise<People>
 }
 
@@ -28,6 +34,9 @@ export async function getPersonById(id: number) {
  */
 export async function getPersonSchema() {
   const response = await fetch(`${API_BASE_URL}/people/schema.json`)
+  if (!response.ok) {
+    throw new Error('Failed to fetch person schema')
+  }
   return response.json() as Promise<PersonSchema>
 }
 

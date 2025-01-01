@@ -8,6 +8,9 @@ import { API_BASE_URL } from '../constants'
  */
 export async function getRoot(): Promise<Root> {
   const response = await fetch(`${API_BASE_URL}/root.json`)
+  if (!response.ok) {
+    throw new Error('Failed to fetch root endpoints')
+  }
   return response.json() as Promise<Root>
 }
 

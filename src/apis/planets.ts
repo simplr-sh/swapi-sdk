@@ -7,6 +7,9 @@ import { API_BASE_URL } from '../constants'
  */
 export async function getPlanets() {
   const response = await fetch(`${API_BASE_URL}/planets/all.json`)
+  if (!response.ok) {
+    throw new Error('Failed to fetch planets')
+  }
   return response.json() as Promise<Array<Planet>>
 }
 
@@ -18,6 +21,9 @@ export async function getPlanets() {
  */
 export async function getPlanetById(id: number) {
   const response = await fetch(`${API_BASE_URL}/planets/${id}.json`)
+  if (!response.ok) {
+    throw new Error('Failed to fetch planet, ensure the ID is correct & exists')
+  }
   return response.json() as Promise<Planet>
 }
 
@@ -28,6 +34,9 @@ export async function getPlanetById(id: number) {
  */
 export async function getPlanetSchema() {
   const response = await fetch(`${API_BASE_URL}/planets/schema.json`)
+  if (!response.ok) {
+    throw new Error('Failed to fetch planet schema')
+  }
   return response.json() as Promise<PlanetSchema>
 }
 

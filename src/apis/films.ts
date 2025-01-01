@@ -7,6 +7,9 @@ import { API_BASE_URL } from '../constants'
  */
 export async function getFilms() {
   const response = await fetch(`${API_BASE_URL}/films/all.json`)
+  if (!response.ok) {
+    throw new Error('Failed to fetch films')
+  }
   return response.json() as Promise<Array<Film>>
 }
 
@@ -18,6 +21,9 @@ export async function getFilms() {
  */
 export async function getFilmById(id: number) {
   const response = await fetch(`${API_BASE_URL}/films/${id}.json`)
+  if (!response.ok) {
+    throw new Error('Failed to fetch film, ensure the ID is correct & exists')
+  }
   return response.json() as Promise<Film>
 }
 
@@ -28,6 +34,9 @@ export async function getFilmById(id: number) {
  */
 export async function getFilmSchema() {
   const response = await fetch(`${API_BASE_URL}/films/schema.json`)
+  if (!response.ok) {
+    throw new Error('Failed to fetch film schema')
+  }
   return response.json() as Promise<FilmSchema>
 }
 

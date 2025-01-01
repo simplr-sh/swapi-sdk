@@ -7,6 +7,9 @@ import { API_BASE_URL } from '../constants'
  */
 export async function getVehicles() {
   const response = await fetch(`${API_BASE_URL}/vehicles/all.json`)
+  if (!response.ok) {
+    throw new Error('Failed to fetch vehicles')
+  }
   return response.json() as Promise<Array<Vehicle>>
 }
 
@@ -18,6 +21,11 @@ export async function getVehicles() {
  */
 export async function getVehicleById(id: number) {
   const response = await fetch(`${API_BASE_URL}/vehicles/${id}.json`)
+  if (!response.ok) {
+    throw new Error(
+      'Failed to fetch vehicle, ensure the ID is correct & exists'
+    )
+  }
   return response.json() as Promise<Vehicle>
 }
 
@@ -28,6 +36,9 @@ export async function getVehicleById(id: number) {
  */
 export async function getVehicleSchema() {
   const response = await fetch(`${API_BASE_URL}/vehicles/schema.json`)
+  if (!response.ok) {
+    throw new Error('Failed to fetch vehicle schema')
+  }
   return response.json() as Promise<VehicleSchema>
 }
 

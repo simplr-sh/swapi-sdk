@@ -7,6 +7,9 @@ import { API_BASE_URL } from '../constants'
  */
 export async function getStarships() {
   const response = await fetch(`${API_BASE_URL}/starships/all.json`)
+  if (!response.ok) {
+    throw new Error('Failed to fetch starships')
+  }
   return response.json() as Promise<Array<Starship>>
 }
 
@@ -18,6 +21,11 @@ export async function getStarships() {
  */
 export async function getStarshipById(id: number) {
   const response = await fetch(`${API_BASE_URL}/starships/${id}.json`)
+  if (!response.ok) {
+    throw new Error(
+      'Failed to fetch starship, ensure the ID is correct & exists'
+    )
+  }
   return response.json() as Promise<Starship>
 }
 
@@ -28,6 +36,9 @@ export async function getStarshipById(id: number) {
  */
 export async function getStarshipSchema() {
   const response = await fetch(`${API_BASE_URL}/starships/schema.json`)
+  if (!response.ok) {
+    throw new Error('Failed to fetch starship schema')
+  }
   return response.json() as Promise<StarshipSchema>
 }
 

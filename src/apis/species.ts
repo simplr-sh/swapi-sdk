@@ -7,6 +7,9 @@ import { API_BASE_URL } from '../constants'
  */
 export async function getSpecies() {
   const response = await fetch(`${API_BASE_URL}/species/all.json`)
+  if (!response.ok) {
+    throw new Error('Failed to fetch species')
+  }
   return response.json() as Promise<Array<Species>>
 }
 
@@ -18,6 +21,11 @@ export async function getSpecies() {
  */
 export async function getSpeciesById(id: number) {
   const response = await fetch(`${API_BASE_URL}/species/${id}.json`)
+  if (!response.ok) {
+    throw new Error(
+      'Failed to fetch species, ensure the ID is correct & exists'
+    )
+  }
   return response.json() as Promise<Species>
 }
 
@@ -28,6 +36,9 @@ export async function getSpeciesById(id: number) {
  */
 export async function getSpeciesSchema() {
   const response = await fetch(`${API_BASE_URL}/species/schema.json`)
+  if (!response.ok) {
+    throw new Error('Failed to fetch species schema')
+  }
   return response.json() as Promise<SpeciesSchema>
 }
 
