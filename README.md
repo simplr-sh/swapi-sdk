@@ -1,6 +1,6 @@
 # @simplr-sh/swapi-sdk
 
-A TypeScript SDK for interacting with the Star Wars API (SWAPI).
+A TypeScript SDK for interacting with the Star Wars API (SWAPI) [Simplr's SW-API](https://github.com/simplr-sh/sw-api).
 
 ## Installation
 
@@ -77,7 +77,7 @@ const allFilms = await films.getFilms();
 const searchResults = await people.searchPeople('luke');
 
 // Get a specific planet
-const tatooine = await planets.getPlanetById('1');
+const tatooine = await planets.getPlanetById(1);
 ```
 
 ## Development
